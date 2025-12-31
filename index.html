@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Takı Sandığı | Sabit Kur Güvenceli Altın Planlama</title>
+
+  <meta name="description"
+        content="Takı Sandığı; altın fiyatını katılım tarihinde sabitleyerek düğün takılarınızı veya altın birikiminizi planlı, şeffaf ve yasal sözleşme güvencesiyle yönetmenizi sağlar. %25 peşinat, 6 ay vade, %8 katılım bedeli." />
+
+  <style>
+    :root{
+      --bg: #f5f1eb;
+      --bg-soft: #faf7f2;
+      --border-soft: #e0d7c8;
+      --ink: #2c2520;
+      --ink-soft: #6d6258;
+      --accent: #8d6b3e;
+      --gold: #b38b57;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      min-height:100vh;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+    a:hover{
+      text-decoration:underline;
+    }
+
+    .page{
+      max-width:1180px;
+      margin:0 auto;
+      padding:28px 18px 40px;
+    }
+
+    /* HEADER / MARKA */
+
+    .header{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--border-soft);
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+
+    .brand-mark{
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      background:radial-gradient(circle at 30% 20%, #fef8e8 0, #d2b88b 35%, #8b6b3b 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.18);
+      color:#fff;
+      font-size:26px;
+      font-weight:600;
+      letter-spacing:0.16em;
+      flex-shrink:0;
+      overflow:hidden;
+    }
+
+    .brand-main{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .brand-text-top{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      color:var(--ink-soft);
+      margin-bottom:2px;
+    }
+
+    .brand-title{
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size:26px;
+      letter-spacing:0.28em;
+      text-transform:uppercase;
+    }
+
+    .brand-sub{
+      font-size:12px;
+      color:var(--ink-soft);
+      margin-top:2px;
+    }
+
+    .brand-logo-wrap{
+      margin-left:10px;
+    }
+
+    .brand-logo{
+      max-height:48px;
+      width:auto;
+      display:block;
+    }
+
+    .contact-block{
+      text-align:right;
+      font-size:11px;
+      color:var(--ink-soft);
+      line-height:1.6;
+    }
+
+    .contact-label{
+      text-transform:uppercase;
+      letter-spacing:0.16em;
+      font-size:10px;
+      color:var(--ink-soft);
+    }
+
+    @media (max-width:840px){
+      .header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .contact-block{
+        text-align:left;
+      }
+      .brand{
+        align-items:flex-start;
+      }
+    }
+
+    /* HERO */
+
+    .hero{
+      padding:22px 0 8px;
+    }
+
+    .hero-title{
+      font-family:"Georgia","Times New Roman",serif;
+      font-size:28px;
+      line-height:1.3;
+      margin-bottom:8px;
+    }
+
+    .hero-title span{
+      color:var(--accent);
+    }
+
+    .hero-text{
+      font-size:14px;
+      color:var(--ink-soft);
+      line-height:1.7;
+      max-width:700px;
+    }
+
+    .hero-pill-row{
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .pill{
+      font-size:11px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+      background:rgba(255,255,255,0.9);
+      color:var(--ink-soft);
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+
+    .pill-dot{
+      width:7px;
+      height:7px;
+      border-radius:999px;
+      background:var(--gold);
+    }
+
+    /* HERO BANNER */
+
+    .hero-banner{
+      margin-top:18px;
+      background:var(--bg-soft);
+      border-radius:18px;
+      border:1px solid var(--border-soft);
+      box-shadow:0 18px 45px rgba(0,0,0,.08);
+      padding:16px 18px;
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:18px;
+      align-items:center;
+    }
+
+    .hero-banner-text{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.8;
+    }
+
+    .hero-banner-title{
+      font-family:"Georgia","Times New Roman",serif;
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .hero-banner-highlights{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .hero-banner-tag{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+      background:#fff;
+      font-size:11px;
+    }
+
+    .hero-banner-visual{
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid #e0d7c8;
+      background:#e9e1d4;
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+    }
+
+    .hero-banner-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    @media (max-width:900px){
+      .hero-banner{
+        grid-template-columns:1fr;
+      }
+    }
+
+    /* “BU SİSTEM KİMLER İÇİN?” */
+
+    .audience-section{
+      margin-top:26px;
+    }
+
+    .audience-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:18px;
+    }
+
+    @media (max-width:820px){
+      .audience-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .audience-card{
+      background:var(--bg-soft);
+      border-radius:16px;
+      border:1px solid var(--border-soft);
+      padding:16px 16px 14px;
+      box-shadow:0 10px 28px rgba(0,0,0,.06);
+      font-size:13px;
+      color:var(--ink-soft);
+    }
+
+    .audience-card h3{
+      font-size:14px;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .audience-card ul{
+      padding-left:16px;
+    }
+
+    .audience-card li{
+      margin-bottom:4px;
+    }
+
+    .audience-note{
+      font-size:11px;
+      color:var(--ink-soft);
+      margin-top:8px;
+    }
+
+    /* TABS NAV */
+
+    .tabs-nav{
+      margin-top:26px;
+      border-bottom:1px solid var(--border-soft);
+      display:flex;
+      flex-wrap:wrap;
+      gap:4px;
+    }
+
+    .tab-button{
+      border:none;
+      background:transparent;
+      padding:10px 14px;
+      font-size:13px;
+      cursor:pointer;
+      color:var(--ink-soft);
+      position:relative;
+      border-radius:999px 999px 0 0;
+      transition:background .2s,color .2s;
+    }
+
+    .tab-button:hover{
+      background:rgba(255,255,255,0.7);
+      color:var(--ink);
+    }
+
+    .tab-button.active{
+      color:var(--ink);
+      font-weight:600;
+    }
+
+    .tab-button.active::after{
+      content:"";
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:-1px;
+      height:2px;
+      background:var(--accent);
+    }
+
+    .tabs-content{
+      padding-top:20px;
+    }
+
+    .tab-panel{
+      display:none;
+      animation:fadeIn .25s ease-out;
+    }
+    .tab-panel.active{
+      display:block;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(4px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .panel{
+      background:var(--bg-soft);
+      border-radius:16px;
+      border:1px solid var(--border-soft);
+      padding:18px 18px 20px;
+      box-shadow:0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .panel-title{
+      font-family:"Georgia","Times New Roman",serif;
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .panel-sub{
+      font-size:12px;
+      color:var(--ink-soft);
+      margin-bottom:14px;
+    }
+
+    /* SİSTEM NASIL ÇALIŞIR */
+
+    .system-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.3fr) minmax(0,0.9fr);
+      gap:22px;
+    }
+
+    @media (max-width:940px){
+      .system-layout{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .steps-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:8px;
+    }
+
+    .step-item{
+      display:grid;
+      grid-template-columns:auto minmax(0,1fr);
+      gap:10px;
+      align-items:flex-start;
+      padding:10px 10px;
+      border-radius:12px;
+      background:white;
+      border:1px solid #e5ddcf;
+    }
+
+    .step-number{
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      background:var(--accent);
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .step-title{
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:2px;
+    }
+
+    .step-text{
+      font-size:12px;
+      color:var(--ink-soft);
+    }
+
+    .system-facts{
+      font-size:12px;
+      color:var(--ink-soft);
+      margin-top:10px;
+      border-top:1px dashed var(--border-soft);
+      padding-top:10px;
+    }
+
+    .fact-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:6px;
+    }
+
+    .fact-pill{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border-soft);
+      background:#fff;
+      font-size:11px;
+    }
+
+    .about-text{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.8;
+    }
+
+    /* ÖDEME PLANI HESAPLAYICI */
+
+    .calc-section{
+      margin-top:16px;
+      padding-top:12px;
+      border-top:1px dashed var(--border-soft);
+      font-size:12px;
+      color:var(--ink-soft);
+    }
+
+    .calc-title{
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:6px;
+    }
+
+    .calc-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:8px;
+      margin-top:8px;
+    }
+
+    .calc-grid label{
+      display:block;
+      margin-bottom:2px;
+    }
+
+    .calc-grid input{
+      width:100%;
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px solid var(--border-soft);
+      font-size:12px;
+      font-family:inherit;
+      background:#fff;
+      color:var(--ink);
+    }
+
+    .calc-grid select{
+      width:100%;
+      padding:6px 8px;
+      border-radius:8px;
+      border:1px solid var(--border-soft);
+      font-size:12px;
+      font-family:inherit;
+      background:#fff;
+      color:var(--ink);
+    }
+
+    .calc-result{
+      margin-top:10px;
+      padding:10px 10px;
+      border-radius:10px;
+      background:#fff;
+      border:1px solid var(--border-soft);
+      font-size:12px;
+    }
+
+    .calc-lines{
+      list-style:none;
+      padding:0;
+      margin:0 0 8px 0;
+    }
+
+    .calc-lines li{
+      margin-bottom:2px;
+    }
+
+    .calc-schedule{
+      margin-top:6px;
+      font-size:11px;
+      border-top:1px solid var(--border-soft);
+      padding-top:6px;
+    }
+
+    .calc-schedule ul{
+      list-style:none;
+      padding:0;
+      margin:4px 0 0 0;
+      max-height:120px;
+      overflow:auto;
+    }
+
+    .calc-schedule li{
+      display:flex;
+      justify-content:space-between;
+      margin-bottom:2px;
+    }
+
+    /* SÖZLEŞME */
+
+    .contract-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:22px;
+    }
+
+    @media (max-width:980px){
+      .contract-layout{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .contract-text{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.7;
+      max-height:640px;
+      overflow:auto;
+      padding-right:6px;
+    }
+
+    .contract-text h3{
+      font-size:13px;
+      font-weight:600;
+      color:var(--ink);
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+      margin:16px 0 8px;
+    }
+
+    .contract-text p{
+      margin-bottom:8px;
+    }
+
+    .contract-label{
+      font-weight:600;
+      color:var(--ink);
+    }
+
+    .sign-block{
+      margin-top:14px;
+      padding-top:10px;
+      border-top:1px solid var(--border-soft);
+    }
+
+    .pdf-object{
+      width:100%;
+      height:640px;
+      border-radius:12px;
+      border:1px solid #d9cdbb;
+      background:#fff;
+    }
+
+    @media (max-width:768px){
+      .pdf-object{
+        height:520px;
+      }
+    }
+
+    .small-note{
+      font-size:11px;
+      color:var(--ink-soft);
+      margin-top:8px;
+    }
+
+    /* SÖZLEŞME ÖZET KUTUSU */
+
+    .contract-summary-panel{
+      margin-bottom:18px;
+    }
+
+    .contract-summary-list{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.7;
+    }
+
+    .contract-summary-list dt{
+      font-weight:600;
+      margin-top:6px;
+    }
+
+    .contract-summary-list dd{
+      margin-left:0;
+      margin-bottom:4px;
+    }
+
+    /* SSS */
+
+    .faq-section{
+      margin-top:26px;
+    }
+
+    .faq-list{
+      margin-top:10px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .faq-item{
+      background:var(--bg-soft);
+      border-radius:12px;
+      border:1px solid var(--border-soft);
+      padding:10px 12px;
+      font-size:13px;
+      color:var(--ink-soft);
+    }
+
+    .faq-q{
+      font-weight:600;
+      margin-bottom:4px;
+    }
+
+    .faq-a{
+      font-size:12px;
+    }
+
+    /* HAKKIMIZDA / ORTAKLAR / İLETİŞİM */
+
+    .two-col{
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr);
+      gap:22px;
+    }
+
+    @media (max-width:960px){
+      .two-col{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .partners-list{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.7;
+    }
+
+    .partner-item{
+      padding:8px 10px;
+      border-radius:10px;
+      background:white;
+      border:1px solid var(--border-soft);
+      margin-bottom:8px;
+    }
+
+    .partner-name{
+      font-weight:600;
+      margin-bottom:2px;
+    }
+
+    .partner-note{
+      font-size:12px;
+    }
+
+    .contact-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:22px;
+    }
+
+    @media (max-width:900px){
+      .contact-layout{
+        grid-template-columns:1fr;
+      }
+    }
+
+    .contact-info{
+      font-size:13px;
+      color:var(--ink-soft);
+      line-height:1.8;
+    }
+
+    .contact-info h4{
+      font-size:13px;
+      margin-top:10px;
+      margin-bottom:4px;
+      font-weight:600;
+    }
+
+    .contact-form{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      font-size:12px;
+    }
+
+    .form-row{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .form-row label{
+      font-size:12px;
+      color:var(--ink-soft);
+    }
+
+    .form-row input,
+    .form-row textarea{
+      border-radius:8px;
+      border:1px solid var(--border-soft);
+      padding:8px 10px;
+      font-size:12px;
+      font-family:inherit;
+      background:#fff;
+      color:var(--ink);
+    }
+
+    .form-row textarea{
+      min-height:90px;
+      resize:vertical;
+    }
+
+    .checkbox-row{
+      display:flex;
+      align-items:flex-start;
+      gap:6px;
+      font-size:11px;
+      color:var(--ink-soft);
+      margin-top:4px;
+    }
+
+    .checkbox-row input[type="checkbox"]{
+      margin-top:2px;
+    }
+
+    .btn-primary{
+      margin-top:6px;
+      border:none;
+      border-radius:999px;
+      padding:9px 16px;
+      font-size:12px;
+      font-weight:500;
+      cursor:pointer;
+      background:linear-gradient(135deg,#c2995f,#8d6b3e);
+      color:#fff;
+      box-shadow:0 8px 24px rgba(0,0,0,.18);
+    }
+
+    .btn-primary:hover{
+      filter:brightness(1.05);
+    }
+
+    .form-note{
+      font-size:11px;
+      color:var(--ink-soft);
+    }
+
+    .footer{
+      margin-top:26px;
+      padding-top:12px;
+      border-top:1px solid var(--border-soft);
+      font-size:11px;
+      color:var(--ink-soft);
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="/static/images/takisandigi_logo.png"
+               alt="Takı Sandığı Logo"
+               style="width:56px; height:56px; object-fit:cover;">
+        </div>
+
+        <div class="brand-main">
+          <div class="brand-text-top">ART TOWER İNŞAAT VE SANAYİ A.Ş.</div>
+          <div class="brand-title">TAKI SANDIĞI</div>
+          <div class="brand-sub">
+            Altın ve takı birikimi için sabit kur avantajlı, şeffaf ve sözleşmeli sistem.
+          </div>
+        </div>
+
+        <div class="brand-logo-wrap">
+          <img src="/static/images/takisandigi_logo.png" alt="Takı Sandığı Logo" class="brand-logo">
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-label">İLETİŞİM</div>
+        <div>Adelya Kuyumculuk</div>
+        <div>Yaman Evler Mah. Alemdağ Cad. No:155/A Ümraniye / İstanbul</div>
+        <div>Şube: Yaman Evler Mah. Alemdağ Cad. No:143/A Ümraniye / İstanbul</div>
+        <div>Tel: 0533 599 73 00</div>
+      </div>
+    </header>
+
+    <!-- TEK PARÇA ANA BANNER -->
+    <div style="
+      width:100%;
+      border-radius:18px;
+      overflow:hidden;
+      margin-top:18px;
+      box-shadow:0 18px 45px rgba(0,0,0,.08);
+    ">
+      <img src="/static/images/takisandigi_banner.png"
+           alt="Takı Sandığı Banner"
+           style="width:100%; display:block;">
+    </div>
+
+    <!-- HERO METİN -->
+    <section class="hero">
+      <h1 class="hero-title">
+        Takı Sandığı ile <span>sabit kur güvencesi</span> altında altın planınızı birlikte kuralım.
+      </h1>
+      <p class="hero-text">
+        Düğün takılarınızı veya gram altın birikiminizi; katılım tarihinde sabitlenen kur, %25 peşinat,
+        6 aya yayılmış ödeme planı ve her iki tarafı da koruyan sözleşme yapısı ile planlı ve şeffaf bir şekilde
+        yönetebilirsiniz. Aşağıdaki sekmeler üzerinden sistem adımlarını, sözleşme metnini, marka hikayesini ve
+        iletişim bilgilerini detaylıca inceleyebilirsiniz.
+      </p>
+
+      <div class="hero-pill-row">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Sabit kur – katılım tarihinde altın fiyatı kilitlenir.
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          %25 peşinat · 6 ay vade · %8 katılım bedeli.
+        </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Sözleşme hem metin hem PDF olarak sunulur.
+        </div>
+      </div>
+
+      <!-- ANA SAYFA BANNER / KUTU -->
+      <div class="hero-banner">
+        <div class="hero-banner-text">
+          <div class="hero-banner-title">Bugün başlasaydınız, planınız nasıl görünürdü?</div>
+          <p>
+            Örneğin 100 gr burma bilezik için; katılım gününde sabitlenen gram fiyatı üzerinden toplam bedel hesaplanır,
+            %25 peşinat alınır, kalan tutar 6 eşit takside bölünür ve tüm koşullar yazılı sözleşme altına alınır.
+          </p>
+          <div class="hero-banner-highlights">
+            <span class="hero-banner-tag">%25 peşinat</span>
+            <span class="hero-banner-tag">6 ay vade</span>
+            <span class="hero-banner-tag">%8 katılım bedeli (iade edilmez)</span>
+            <span class="hero-banner-tag">Teslimde fatura ve yasal kayıt</span>
+          </div>
+        </div>
+        <div class="hero-banner-visual">
+          <img src="/static/images/takisandigi_banner.png" alt="Takı Sandığı Banner">
+        </div>
+      </div>
+    </section>
+
+    <!-- BU SİSTEM KİMLER İÇİN? -->
+    <section class="audience-section">
+      <div class="audience-grid">
+        <article class="audience-card">
+          <h3>Bu sistem kimler için uygun?</h3>
+          <ul>
+            <li>Düğün tarihi belli olan ve takılarını şimdiden planlamak isteyen çiftler,</li>
+            <li>Çocuğu için altın birikimi yapmak isteyen aileler,</li>
+            <li>Büyük montanlı takıyı tek seferde değil aylara bölerek ödemek isteyenler,</li>
+            <li>Kuyumcu mağduriyeti yaşamamak için yazılı sözleşme ve sabit kur arayanlar.</li>
+          </ul>
+          <p class="audience-note">
+            Kısacası; ne ödeyeceğini, ne zaman teslim alacağını ve arada sürpriz olmayacağını bilmek isteyen
+            herkes için idealdir.
+          </p>
+        </article>
+
+        <article class="audience-card">
+          <h3>Kimler için uygun değildir?</h3>
+          <ul>
+            <li>Kısa vadede altını bozdurmayı düşünenler,</li>
+            <li>Düzenli ödeme yapamayacağını öngörenler,</li>
+            <li>Katılım bedeli (%8) gibi hizmet paylarını kabul etmeyenler,</li>
+            <li>Sözleşmesiz, tamamen esnek ve belirsiz alışveriş tercih edenler.</li>
+          </ul>
+          <p class="audience-note">
+            Takı Sandığı, tamamen sözleşmeli ve planlı bir yapı olduğu için disiplinli ödeme ve uzun vadeli
+            düşünme alışkanlığı gerektirir.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SEKME MENÜSÜ -->
+    <nav class="tabs-nav" aria-label="Sayfa bölümleri">
+      <button class="tab-button active" data-tab="sistem">Sistem Nasıl Çalışır?</button>
+      <button class="tab-button" data-tab="sozlesme">Sözleşme</button>
+      <button class="tab-button" data-tab="hakkimizda">Hakkımızda</button>
+      <button class="tab-button" data-tab="ortaklar">İş Ortaklarımız</button>
+      <button class="tab-button" data-tab="iletisim">İletişim</button>
+    </nav>
+
+    <div class="tabs-content">
+
+      <!-- SİSTEM NASIL ÇALIŞIR -->
+      <section class="tab-panel active" id="tab-sistem">
+        <div class="system-layout">
+          <article class="panel">
+            <h2 class="panel-title">Sistem Adımları</h2>
+            <p class="panel-sub">
+              Takı Sandığı, kuyumculukta yaşanan fiyat belirsizliği ve güvensizlik sorununu çözmek için
+              sabit kur ve yazılı sözleşme ile çalışan planlı bir sistemdir.
+            </p>
+
+            <div class="steps-list">
+              <div class="step-item">
+                <div class="step-number">1</div>
+                <div>
+                  <div class="step-title">Ürün / Gramaj Seçimi</div>
+                  <div class="step-text">
+                    Müşteri; burma bilezik, set, gram altın veya dilediği takı modelini ve yaklaşık gramajını seçer.
+                    Hedeflenen ürün ve teslim tarihi not edilir.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">2</div>
+                <div>
+                  <div class="step-title">Katılım Tarihinde Sabit Kur</div>
+                  <div class="step-text">
+                    Katılım gününde geçerli olan 14 ayar veya 22 ayar altın gram fiyatı müşteriye açıklanır ve tarafların
+                    onayıyla sabitlenir. Tüm hesaplama bu sabit kur üzerinden yapılır.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">3</div>
+                <div>
+                  <div class="step-title">%25 Peşinat Ödemesi</div>
+                  <div class="step-text">
+                    Toplam sözleşme bedelinin %25’i peşinat olarak tahsil edilir. Kalan %75’lik kısım, 6 aya
+                    bölünerek eşit taksitlere ayrılır.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">4</div>
+                <div>
+                  <div class="step-title">%8 Katılım Bedeli ve Sözleşme İmzası</div>
+                  <div class="step-text">
+                    Organizasyon ve operasyon maliyetleri için %8 katılım bedeli alınır. Katılım bedeli iade
+                    edilmeyen bir hizmet payıdır. Bu aşamada Takı Sandığı katılım ve teslim sözleşmesi imzalanır.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">5</div>
+                <div>
+                  <div class="step-title">Taksitli Ödeme Dönemi</div>
+                  <div class="step-text">
+                    Müşteri, 6 ay boyunca taksitlerini zamanında öder. Gecikme olursa geciken tutar, gecikme günündeki
+                    güncel altın kuru üzerinden yeniden hesaplanır ve fark tahsil edilir.
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-item">
+                <div class="step-number">6</div>
+                <div>
+                  <div class="step-title">Teslim ve Fatura</div>
+                  <div class="step-text">
+                    Son taksit ödendiğinde, sözleşmede belirtilen ayar ve gramda ürün hazırlanır ve teslim edilir.
+                    Teslimde fatura kesilir ve mülkiyet müşteriye geçer.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="system-facts">
+              <strong>Özet Kurallar:</strong>
+              <div class="fact-row">
+                <div class="fact-pill">%25 peşinat zorunlu</div>
+                <div class="fact-pill">%8 katılım bedeli iade edilmez</div>
+                <div class="fact-pill">Vade: 6 ay</div>
+                <div class="fact-pill">Gecikme: güncel kur üzerinden hesaplanır</div>
+                <div class="fact-pill">2 ay ödeme yapılmazsa temerrüt ve fesih hakları doğar</div>
+              </div>
+            </div>
+          </article>
+
+          <aside class="panel">
+            <h2 class="panel-title">Neden Takı Sandığı?</h2>
+            <div class="about-text">
+              <p>
+                ART TOWER İNŞAAT VE SANAYİ A.Ş. ve Adelya Kuyumculuk güvencesiyle altın birikiminizi tamamen
+                sözleşmeli, hesap verilebilir ve planlı bir yapıya dönüştürürsünüz.
+              </p>
+              <p>
+                Düğün öncesi son dakika fiyat sürprizleri ve kuyumcu mağduriyeti gibi risklerin önüne geçmek için
+                kur, peşinat, taksit ve teslim koşulları baştan belirlenir ve yazılı hale getirilir.
+              </p>
+              <p>
+                Hedef; Cartier ve Rolex gibi markalarda gördüğünüz sakin, güven veren ve saygılı deneyimi,
+                yerel kuyumculuk kültürüyle birleştirmektir.
+              </p>
+            </div>
+
+            <!-- ÖDEME PLANI HESAPLAYICI -->
+            <section class="calc-section">
+              <div class="calc-title">Ödeme Planı Hesaplama</div>
+              <p class="small-note">
+                Altın ayarınızı, sabit gram fiyatını ve almak istediğiniz toplam gramı girerek örnek bir ödeme planı
+                görebilirsiniz. Hesaplama bilgilendirme amaçlıdır.
+              </p>
+
+              <form id="calcForm" onsubmit="return calculatePlan(event)">
+                <div class="calc-grid">
+                  <div>
+                    <label for="calc_ayar">Altın Ayarı</label>
+                    <select id="calc_ayar" name="calc_ayar">
+                      <option value="14">14 Ayar</option>
+                      <option value="22">22 Ayar</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="calc_kur">Sabit Kur (TL / gr)</label>
+                    <input type="number" id="calc_kur" name="calc_kur" min="0" step="0.01" placeholder="Örn: 4950" required />
+                  </div>
+                  <div>
+                    <label for="calc_gram">Toplam Gram (gr)</label>
+                    <input type="number" id="calc_gram" name="calc_gram" min="0" step="0.01" placeholder="Örn: 100" required />
+                  </div>
+                  <div>
+                    <label for="calc_vade">Vade (Ay)</label>
+                    <input type="number" id="calc_vade" name="calc_vade" min="1" max="24" step="1" value="6" />
+                  </div>
+                  <div>
+                    <label for="calc_pesinat">% Peşinat</label>
+                    <input type="number" id="calc_pesinat" name="calc_pesinat" min="0" max="100" step="1" value="25" />
+                  </div>
+                  <div>
+                    <label for="calc_katilim">% Katılım Bedeli</label>
+                    <input type="number" id="calc_katilim" name="calc_katilim" min="0" max="100" step="0.5" value="8" />
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-primary" style="margin-top:10px; padding-inline:14px; font-size:11px;">
+                  Ödeme Planını Hesapla
+                </button>
+              </form>
+
+              <div id="calcResult" class="calc-result" style="display:none;">
+                <ul class="calc-lines">
+                  <li><strong>Toplam Tutar (Sözleşme Bedeli):</strong> <span id="calc_toplam_tutar">-</span></li>
+                  <li><strong>Peşinat Tutarı:</strong> <span id="calc_pesinat_tutar">-</span></li>
+                  <li><strong>Bakiye (Taksitlenecek):</strong> <span id="calc_bakiye">-</span></li>
+                  <li><strong>Aylık Taksit:</strong> <span id="calc_aylik">-</span></li>
+                  <li><strong>Katılım Bedeli:</strong> <span id="calc_katilim_bedeli">-</span></li>
+                  <li><strong>Toplam Ödeme (Ürün + Katılım):</strong> <span id="calc_toplam_odeme">-</span></li>
+                </ul>
+
+                <div class="calc-schedule">
+                  <strong>Taksit Tablosu (Örnek)</strong>
+                  <ul id="calcScheduleList">
+                    <!-- JS ile doldurulacak -->
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <!-- SÖZLEŞME -->
+      <section class="tab-panel" id="tab-sozlesme">
+
+        <!-- ÖZET SÖZLEŞME KUTUSU -->
+        <section class="panel contract-summary-panel">
+          <h2 class="panel-title">Sözleşmenin Kısa Özeti</h2>
+          <p class="panel-sub">
+            Aşağıdaki maddeler, detaylı sözleşme metninin kolay anlaşılır şekilde özetlenmiş halidir.
+            Altında tam hukuki metni ve PDF versiyonunu görebilirsiniz.
+          </p>
+          <dl class="contract-summary-list">
+            <dt>Fiyat nasıl sabitleniyor?</dt>
+            <dd>
+              Katılım günündeki altın kuru tarafların onayıyla sabitleniyor ve tüm hesaplama bu kur üzerinden yapılıyor.
+              Altın fiyatı yükselse de sözleşme fiyatı artmıyor; düşse de satıcı fiyatı yeniden belirlemek zorunda olmuyor.
+            </dd>
+
+            <dt>Ödemeler nasıl yapılıyor?</dt>
+            <dd>
+              Toplam bedelin %25’i peşin, kalan tutar 6 aya bölünüyor. Ödemeler banka ve POS kanallarıyla alınıyor
+              ve dekontlar müşteri tarafından saklanıyor.
+            </dd>
+
+            <dt>Gecikme olursa ne oluyor?</dt>
+            <dd>
+              Geciken taksit tutarı, gecikme tarihindeki güncel altın kuru üzerinden yeniden hesaplanıyor.
+              Oluşan fark müşteri tarafından ödeniyor. Amaç, sistemin adil ve sürdürülebilir kalmasıdır.
+            </dd>
+
+            <dt>Katılım bedeli iade ediliyor mu?</dt>
+            <dd>
+              Hayır. Katılım bedeli (%8), tamamen hizmet payıdır ve iade edilmez. Sözleşme feshedilse bile ürün bedelinden
+              bağımsız olarak alınmış kabul edilir.
+            </dd>
+
+            <dt>İki ay ödeme yapmazsam ne olur?</dt>
+            <dd>
+              Ardışık veya aralıklı iki ay ödeme yapılmazsa temerrüt oluşur. Satıcı, sözleşmeyi haklı nedenle feshedebilir
+              ve yapılan ödemelerden masraflar ve kur farkları düşülerek kalan kısım müşteriye iade edilir.
+            </dd>
+          </dl>
+        </section>
+
+        <div class="contract-layout">
+
+          <!-- SOL: HTML METİN -->
+          <article class="panel">
+            <h2 class="panel-title">Katılım ve Teslim Sözleşmesi</h2>
+            <p class="panel-sub">
+              Aşağıda Takı Sandığı sistemine katılırken imzalanan sözleşmenin tam metnini görebilirsiniz.
+              Sağ tarafta aynı sözleşmenin PDF versiyonu yer alır.
+            </p>
+
+            <div class="contract-text">
+              <h3>TARAF BİLGİLERİ</h3>
+              <p class="contract-label">SATICI / ORGANİZATÖR:</p>
+              <p>
+                ART TOWER İNŞAAT VE SANAYİ A.Ş.<br/>
+                Vergi Dairesi: Kartal<br/>
+                Vergi No: 6211022407<br/>
+                Telefon: 0533 599 73 00<br/>
+                Faaliyet Şubesi – Kuyumculuk Hizmetleri: Adelya Kuyumculuk<br/>
+                Merkez Adres: Yaman Evler Mah. Alemdağ Cad. No:155/A Ümraniye / İstanbul<br/>
+                Şube Adres: Yaman Evler Mah. Alemdağ Cad. No:143/A Ümraniye / İstanbul
+              </p>
+
+              <p class="contract-label" style="margin-top:10px;">MÜŞTERİ / KATILIMCI:</p>
+              <p>
+                Adı Soyadı / Unvanı: ..................................................<br/>
+                T.C. Kimlik / Vergi No: ..................................................<br/>
+                Adres: ..................................................<br/>
+                Telefon: ..................................................<br/>
+                E-posta: ..................................................
+              </p>
+
+              <h3>MADDE 1 – SÖZLEŞMENİN AMACI VE KONUSU</h3>
+              <p>
+                İşbu sözleşme; müşterinin seçmiş olduğu altın veya takı ürününü, katılım tarihinde sabitlenen altın kuru
+                esas alınarak %25 peşinat ve 6 ay vadeli taksitli ödeme planı ile satın alması ve belirlenen teslim
+                tarihinde ürünü teslim almasına ilişkin koşulları düzenler.
+              </p>
+
+              <h3>MADDE 2 – SİSTEMİN İŞLEYİŞİ</h3>
+              <p>
+                Katılım tarihinde geçerli altın fiyatı taraflarca belirlenerek sabitlenir. Toplam bedelin %25’i peşinat
+                olarak tahsil edilir, kalan tutar 6 eşit taksite bölünür. Ödemeler satıcının bildirdiği hesap ve POS
+                kanalları üzerinden yapılır. Müşteri dekontları saklamakla yükümlüdür.
+              </p>
+
+              <h3>MADDE 3 – SABİT FİYAT ESASI</h3>
+              <p>
+                Katılım gününde belirlenen altın fiyatı, sözleşme süresince geçerliliğini korur. Altın fiyatının
+                yükselmesi halinde müşteriden ek bedel talep edilmez. Fiyatın düşmesi, satıcının sözleşme fiyatını
+                yeniden belirlemesini gerektirmez.
+              </p>
+
+              <h3>MADDE 4 – KATILIM BEDELİ (HİZMET PAYI)</h3>
+              <p>
+                Organizasyon ve operasyon giderlerinin karşılığı olarak toplam bedel üzerinden %8 katılım bedeli
+                tahsil edilir. Katılım bedeli hizmet niteliğindedir, iade edilmez ve mal bedelinden bağımsızdır.
+              </p>
+
+              <h3>MADDE 5 – ÜRÜN VE TESLİM</h3>
+              <p>
+                Müşteri tüm taksitleri tamamladığında, sözleşmede belirtilen ayar, gram ve kalitede ürün hazırlanarak
+                teslim edilir. Teslim sırasında fatura düzenlenir ve mülkiyet müşteriye geçer. Mücbir sebeplerden
+                kaynaklı gecikmelerde satıcı sorumlu tutulamaz; engel ortadan kalktığında teslim gerçekleştirilir.
+              </p>
+
+              <h3>MADDE 6 – GECİKME VE ÖDEME İHLALİ</h3>
+              <p>
+                Müşteri taksit ödemelerinde gecikme yaparsa, geciken tutar gecikmenin gerçekleştiği tarihte geçerli
+                olan <span class="contract-label">güncel altın kuru</span> üzerinden yeniden hesaplanır ve fark
+                tahsil edilir. Müşteri gecikmeden doğan kur farklarını ödemeyi peşinen kabul eder.
+              </p>
+
+              <h3>MADDE 7 – TEMERRÜT VE SÖZLEŞMENİN FESHİ</h3>
+              <p>
+                Müşterinin ardışık veya aralıklı olarak iki ay süreyle ödeme yapmaması halinde temerrüt hali oluşur.
+                Satıcı, ayrıca ihtara gerek olmaksızın sözleşmeyi haklı nedenle feshedebilir. Fesih halinde katılım
+                bedeli iade edilmez; müşteri tarafından ödenen taksitlerden organizasyon giderleri, gecikmeden doğan
+                kur farkları ve idari masraflar mahsup edilir, kalan tutar müşteriye iade edilir.
+              </p>
+
+              <h3>MADDE 8 – GARANTİ VE AYIP</h3>
+              <p>
+                Teslim edilen ürün ayar, gram ve yasal standartlara uygun olup üretim kaynaklı ayıplar için mevzuat
+                çerçevesinde onarım, değişim veya bedel iadesi hakları uygulanır. Kullanıcı hatalarından doğan
+                zararlar garanti kapsamı dışındadır.
+              </p>
+
+              <h3>MADDE 9 – KİŞİSEL VERİLERİN KORUNMASI</h3>
+              <p>
+                Taraflar, 6698 sayılı Kişisel Verilerin Korunması Kanunu hükümlerine uygun davranacaklarını kabul eder.
+                Müşteriye ait kişisel veriler yalnızca sözleşmenin ifası amacıyla işlenir ve yasal zorunluluk halleri
+                dışında üçüncü kişilerle paylaşılmaz.
+              </p>
+
+              <h3>MADDE 10 – MÜCBİR SEBEPLER</h3>
+              <p>
+                Savaş, doğal afet, yangın, salgın hastalık, resmi makam kararları gibi öngörülemeyen ve tarafların
+                kontrolü dışındaki haller mücbir sebep sayılır. Mücbir sebep süresince yükümlülükler askıda kalır;
+                sebep ortadan kalktığında sözleşme hükümlerinin ifasına devam edilir.
+              </p>
+
+              <h3>MADDE 11 – DELİL SÖZLEŞMESİ</h3>
+              <p>
+                Taraflar, satıcıya ait defter kayıtları ve elektronik verilerin Hukuk Muhakemeleri Kanunu uyarınca
+                kesin delil niteliğinde olduğunu kabul ve beyan eder.
+              </p>
+
+              <h3>MADDE 12 – TEBLİGAT</h3>
+              <p>
+                İşbu sözleşmede belirtilen adresler tarafların yasal tebligat adresleridir. Adres değişiklikleri
+                yazılı olarak bildirilmedikçe eski adrese yapılan tebligatlar geçerli kabul edilir.
+              </p>
+
+              <h3>MADDE 13 – YETKİ VE YÜRÜRLÜK</h3>
+              <p>
+                İşbu sözleşme elektronik veya ıslak imza ile onaylandığı tarihte yürürlüğe girer. Uyuşmazlıklarda
+                satıcının merkezinin bulunduğu yer tüketici hakem heyetleri ve tüketici mahkemeleri yetkilidir.
+              </p>
+
+              <div class="sign-block">
+                <p class="contract-label">SATICI / ORGANİZATÖR</p>
+                <p>
+                  ART TOWER İNŞAAT VE SANAYİ A.Ş.<br/>
+                  (İmza – Kaşe)
+                </p>
+
+                <p class="contract-label" style="margin-top:10px;">MÜŞTERİ / KATILIMCI</p>
+                <p>
+                  (İmza)<br/>
+                  Tarih: .... / .... / 20....
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- SAĞ: PDF -->
+          <article class="panel">
+            <h2 class="panel-title">PDF Olarak Görüntüle / İndir</h2>
+            <p class="panel-sub">
+              Aşağıdaki alanda sözleşmenin PDF halini görüntüleyebilir, yazdırabilir veya indirebilirsiniz.
+              Bu PDF, imza için kullanılacak resmi dokümandır.
+            </p>
+
+            <object
+              class="pdf-object"
+              data="/docs/taki_sandigi_sozlesme.pdf"
+              type="application/pdf">
+              Tarayıcınız PDF görüntülemeyi desteklemiyorsa,
+              sözleşmeyi indirmek için
+              <a href="/docs/taki_sandigi_sozlesme.pdf" download>buraya tıklayabilirsiniz.</a>
+            </object>
+          </article>
+        </div>
+
+        <!-- DİNAMİK SÖZLEŞME FORMU (generate-contract) -->
+        <section id="sozlesme-formu" class="panel" style="margin-top:20px; max-width:900px; margin-left:auto; margin-right:auto;">
+          <h2 class="panel-title">Sözleşme Bilgileri · PDF Oluştur</h2>
+          <p class="panel-sub">
+            Aşağıdaki alanları doldurduğunuzda, bilgilerinize özel Takı Sandığı sözleşmesi
+            PDF olarak açılır. Buradan indirip yazdırabilir ve imzalı şekilde kullanabilirsiniz.
+          </p>
+
+          <form id="contractForm" onsubmit="return generateContractPdf(event)">
+            <div style="display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap:12px;">
+              <div style="grid-column:1 / -1;">
+                <label>Ad Soyad</label><br>
+                <input type="text" name="musteri_adi" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div>
+                <label>T.C. / Vergi No</label><br>
+                <input type="text" name="tc_no" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div>
+                <label>Telefon</label><br>
+                <input type="text" name="telefon" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div>
+                <label>E-posta (opsiyonel)</label><br>
+                <input type="email" name="email"
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div style="grid-column:1 / -1;">
+                <label>Adres</label><br>
+                <textarea name="adres" rows="2" required
+                          style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft); resize:vertical;"></textarea>
+              </div>
+
+              <div style="grid-column:1 / -1;">
+                <label>Ürün Adı / Açıklaması</label><br>
+                <input type="text" name="urun_adi" placeholder="Örn: 100 gr burma bilezik" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div>
+                <label>Toplam Tutar (TL)</label><br>
+                <input type="number" name="toplam_tutar" step="0.01" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div>
+                <label>Peşinat (TL)</label><br>
+                <input type="number" name="pesinat" step="0.01" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+
+              <div>
+                <label>Taksit Sayısı (Ay)</label><br>
+                <input type="number" name="taksit_sayisi" value="6" required
+                       style="width:100%; padding:8px; margin-top:4px; border-radius:8px; border:1px solid var(--border-soft);">
+              </div>
+            </div>
+
+            <div style="margin-top:18px; text-align:right;">
+              <button type="submit" class="btn-primary">
+                PDF Oluştur
+              </button>
+            </div>
+          </form>
+        </section>
+      </section>
+
+      <!-- HAKKIMIZDA -->
+      <section class="tab-panel" id="tab-hakkimizda">
+        <div class="two-col">
+          <article class="panel">
+            <h2 class="panel-title">Hakkımızda</h2>
+            <p class="panel-sub">
+              ART TOWER İNŞAAT VE SANAYİ A.Ş. ve Adelya Kuyumculuk’un kuyumculuk alanındaki deneyimi,
+              Takı Sandığı ile kurumsal bir çatı altında birleştirilmiştir.
+            </p>
+
+            <div class="about-text">
+              <p>
+                ART TOWER İNŞAAT VE SANAYİ A.Ş., inşaat ve yatırım projelerinin yanı sıra Adelya Kuyumculuk markası
+                üzerinden kuyumculuk sektöründe güvenilir, modern ve müşteri odaklı bir hizmet anlayışı sunar.
+              </p>
+              <p>
+                Adelya Kuyumculuk, İstanbul Ümraniye’de yer alan mağazaları ile altın takı, pırlanta ve yatırım
+                ürünlerinde seçilmiş koleksiyonlar sunar. Takı Sandığı sistemi, bu mağaza deneyimini uzun vadeli
+                planlama ve sözleşmeli yapı ile birleştirir.
+              </p>
+              <p>
+                Amacımız; düğün hazırlığı yapan çiftlere, çocukları için altın birikimi yapmak isteyen ailelere ve
+                planlı hareket etmek isteyen herkese şeffaf ve hesap verilebilir bir kuyumculuk deneyimi sunmaktır.
+              </p>
+            </div>
+          </article>
+
+          <aside class="panel">
+            <h2 class="panel-title">Mağazalarımız</h2>
+            <div class="about-text">
+              <p>
+                <strong>Merkez Mağaza:</strong><br/>
+                Adelya Kuyumculuk<br/>
+                Yaman Evler Mah. Alemdağ Cad. No:155/A<br/>
+                Ümraniye / İstanbul
+              </p>
+              <p>
+                <strong>Şube:</strong><br/>
+                Adelya Kuyumculuk Şube<br/>
+                Yaman Evler Mah. Alemdağ Cad. No:143/A<br/>
+                Ümraniye / İstanbul
+              </p>
+              <p>
+                <strong>Telefon:</strong> 0533 599 73 00
+              </p>
+              <p>
+                Randevu ile bire bir danışmanlık alabilir, Takı Sandığı sistemini detaylı şekilde mağazamızda da
+                görüşebilirsiniz.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- İŞ ORTAKLARIMIZ -->
+      <section class="tab-panel" id="tab-ortaklar">
+        <article class="panel">
+          <h2 class="panel-title">İş Ortaklarımız</h2>
+          <p class="panel-sub">
+            Takı Sandığı, finansal ve operasyonel süreçlerde farklı iş ortakları ile desteklenen kurumsal bir yapıdır.
+          </p>
+
+          <div class="partners-list">
+            <div class="partner-item">
+              <div class="partner-name">ART TOWER İNŞAAT VE SANAYİ A.Ş.</div>
+              <div class="partner-note">
+                Sözleşmeden sorumlu ana şirket ve sistem kurucusudur. Alt yapı, sözleşme koşulları ve finansal planlama
+                bu yapı altında yürütülür.
+              </div>
+            </div>
+
+            <div class="partner-item">
+              <div class="partner-name">Adelya Kuyumculuk</div>
+              <div class="partner-note">
+                Ürün tedariği, vitrin, satış ve teslim süreçlerini yöneten kuyumculuk markasıdır. Müşterinin tüm fiziki
+                temas noktası Adelya üzerinden sağlanır.
+              </div>
+            </div>
+
+            <div class="partner-item">
+              <div class="partner-name">Banka ve Ödeme Kuruluşları</div>
+              <div class="partner-note">
+                Taksit ödemeleri, POS ve hesap hareketleri anlaşmalı banka ve ödeme kuruluşları üzerinden yürütülür.
+                İlerleyen dönemde bu liste, resmi isimlerle birlikte detaylandırılabilir.
+              </div>
+            </div>
+
+            <p class="small-note">
+              İş ortakları listesi, yeni iş birlikleri ile güncellenebilir. Güncel bilgiler için mağazalarımız
+              veya resmi iletişim kanallarımızdan bilgi alabilirsiniz.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- İLETİŞİM -->
+      <section class="tab-panel" id="tab-iletisim">
+        <div class="contact-layout">
+          <article class="panel">
+            <h2 class="panel-title">İletişim ve Randevu</h2>
+            <p class="panel-sub">
+              Takı Sandığı ile ilgili tüm sorularınız için bizimle iletişime geçebilir, mağazamızdan randevu alabilirsiniz.
+            </p>
+
+            <div class="contact-info">
+              <h4>Telefon</h4>
+              <p>0533 599 73 00</p>
+
+              <h4>Merkez Mağaza</h4>
+              <p>
+                Adelya Kuyumculuk<br/>
+                Yaman Evler Mah. Alemdağ Cad. No:155/A<br/>
+                Ümraniye / İstanbul
+              </p>
+
+              <h4>Şube</h4>
+              <p>
+                Adelya Kuyumculuk Şube<br/>
+                Yaman Evler Mah. Alemdağ Cad. No:143/A<br/>
+                Ümraniye / İstanbul
+              </p>
+
+              <h4>Görüşme Şekli</h4>
+              <p>
+                Takı Sandığı ile ilgili görüşmeler, mümkün olduğunca <strong>randevu ile</strong> yapılmaktadır.
+                Böylece size özel, sakin ve detaylı bir anlatım süreci sağlanır.
+              </p>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2 class="panel-title">Bilgi / Ön Başvuru Formu</h2>
+            <p class="panel-sub">
+              Bu form, ön bilgi ve iletişim amaçlıdır. Formu doldurduğunuzda, ekibimiz en kısa sürede sizinle iletişime geçer.
+            </p>
+
+            <form class="contact-form" action="#" method="post"
+                  onsubmit="alert('Talebiniz alınmıştır. En kısa sürede sizinle iletişime geçeceğiz.'); return false;">
+              <div class="form-row">
+                <label for="name">Adınız Soyadınız</label>
+                <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required />
+              </div>
+
+              <div class="form-row">
+                <label for="phone">Telefon Numaranız</label>
+                <input type="tel" id="phone" name="phone" placeholder="05xx xxx xx xx" required />
+              </div>
+
+              <div class="form-row">
+                <label for="email">E-posta Adresiniz (opsiyonel)</label>
+                <input type="email" id="email" name="email" placeholder="ornek@mail.com" />
+              </div>
+
+              <div class="form-row">
+                <label for="message">Kısa Açıklama</label>
+                <textarea id="message" name="message" placeholder="Düğün tarihi, almak istediğiniz takı türü vb."></textarea>
+              </div>
+
+              <div class="checkbox-row">
+                <input type="checkbox" id="kvkk" required />
+                <label for="kvkk">
+                  KVKK metnini ve Takı Sandığı sözleşmesini okuduğumu, bilgilerimin iletişim ve bilgilendirme
+                  amaçlı kullanılmasını kabul ediyorum.
+                </label>
+              </div>
+
+              <button type="submit" class="btn-primary">
+                Formu Gönder
+              </button>
+
+              <p class="form-note">
+                Bu form, resmî sözleşme niteliğinde değildir. Resmî katılım için sözleşmenin PDF olarak imzalanması
+                ve taraflarca onaylanması gerekir.
+              </p>
+            </form>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <!-- SSS BÖLÜMÜ -->
+    <section class="faq-section">
+      <article class="panel">
+        <h2 class="panel-title">Sıkça Sorulan Sorular</h2>
+        <p class="panel-sub">
+          Takı Sandığı sistemi ile ilgili en sık sorulan başlıkları aşağıda bulabilirsiniz.
+          Detaylı bilgi için her zaman mağazalarımızla iletişime geçebilirsiniz.
+        </p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">Katılım bedeli neden iade edilmiyor?</div>
+            <div class="faq-a">
+              Katılım bedeli, tamamen organizasyon ve operasyon giderlerine karşılık gelen bir hizmet payıdır.
+              Ürün bedelinden bağımsız olduğu için sözleşme sonradan feshedilse dahi iade edilmemektedir.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Altın fiyatları çok yükselirse ne olur?</div>
+            <div class="faq-a">
+              Katılım tarihinde sabitlenen fiyat, sözleşme boyunca geçerliliğini korur. Altın fiyatı yükselse de,
+              müşteri ile başta anlaşılan sabit kur üzerinden hesaplama yapılır; ek fark talep edilmez.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Ödemelerimde zorlanırsam ne yapmalıyım?</div>
+            <div class="faq-a">
+              Taksitlerde gecikme yaşamadan önce bizimle iletişime geçmeniz önemlidir. Gecikme olması halinde,
+              geciken tutar güncel altın kuru üzerinden yeniden hesaplanır ve fark tahsil edilir.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Ürünü teslim alırken farklı bir model seçebilir miyim?</div>
+            <div class="faq-a">
+              Aynı ayar ve benzer gramajda kalmak kaydıyla, stok ve fiyat koşulları uygun olduğu takdirde model
+              değişikliği değerlendirilebilir. Kesin karar, teslim tarihindeki mağaza koşullarına göre verilir.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">Bu sistem bankacılık ürünü mü, yatırım fonu mu?</div>
+            <div class="faq-a">
+              Hayır. Takı Sandığı, bankacılık ürünü veya yatırım fonu değildir. Kuyumculuk hizmeti kapsamında yürütülen,
+              sözleşmeli ve planlı bir altın ve takı alım sistemidir.
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <span>© Takı Sandığı – ART TOWER İNŞAAT VE SANAYİ A.Ş.</span>
+      <span>Faaliyet Şubesi: Adelya Kuyumculuk · İstanbul / Ümraniye</span>
+    </footer>
+  </div>
+
+  <!-- JS: SEKME GEÇİŞLERİ + PDF OLUŞTURMA + HESAPLAYICI -->
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-tab');
+
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        document.getElementById('tab-' + target).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    function generateContractPdf(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("contractForm");
+      const data = new FormData(form);
+
+      const params = new URLSearchParams();
+      params.append("musteri_adi", data.get("musteri_adi"));
+      params.append("tc_no", data.get("tc_no"));
+      params.append("adres", data.get("adres"));
+      params.append("telefon", data.get("telefon"));
+      params.append("email", data.get("email") || "");
+      params.append("urun_adi", data.get("urun_adi"));
+      params.append("toplam_tutar", data.get("toplam_tutar") || "0");
+      params.append("pesinat", data.get("pesinat") || "0");
+      params.append("taksit_sayisi", data.get("taksit_sayisi") || "6");
+
+      const baseUrl = window.location.origin;
+      const url = baseUrl + "/generate-contract?" + params.toString();
+
+      window.open(url, "_blank");
+      return false;
+    }
+
+    function formatTL(value) {
+      return new Intl.NumberFormat('tr-TR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(value);
+    }
+
+    function calculatePlan(event) {
+      event.preventDefault();
+
+      const kurInput = document.getElementById('calc_kur');
+      const gramInput = document.getElementById('calc_gram');
+      const pesinatInput = document.getElementById('calc_pesinat');
+      const vadeInput = document.getElementById('calc_vade');
+      const katilimInput = document.getElementById('calc_katilim');
+
+      const kur = parseFloat((kurInput.value || '').replace(',', '.')) || 0;
+      const gram = parseFloat((gramInput.value || '').replace(',', '.')) || 0;
+      const pesinatPercent = parseFloat((pesinatInput.value || '').replace(',', '.')) || 0;
+      const vade = parseInt(vadeInput.value || '1') || 1;
+      const katilimPercent = parseFloat((katilimInput.value || '').replace(',', '.')) || 0;
+
+      if (!kur || kur <= 0) {
+        alert('Lütfen sabit gram fiyatını girin.');
+        kurInput.focus();
+        return false;
+      }
+
+      if (!gram || gram <= 0) {
+        alert('Lütfen toplam gramı girin.');
+        gramInput.focus();
+        return false;
+      }
+
+      if (vade <= 0) {
+        alert('Lütfen vade ayını doğru girin.');
+        vadeInput.focus();
+        return false;
+      }
+
+      const total = kur * gram;
+      const pesinatTutar = total * pesinatPercent / 100;
+      const bakiye = Math.max(total - pesinatTutar, 0);
+      const aylikTaksit = bakiye / vade;
+      const katilimBedeli = total * katilimPercent / 100;
+      const toplamOdeme = total + katilimBedeli;
+
+      document.getElementById('calc_toplam_tutar').textContent = formatTL(total) + ' TL';
+      document.getElementById('calc_pesinat_tutar').textContent = formatTL(pesinatTutar) + ' TL';
+      document.getElementById('calc_bakiye').textContent = formatTL(bakiye) + ' TL';
+      document.getElementById('calc_aylik').textContent = formatTL(aylikTaksit) + ' TL';
+      document.getElementById('calc_katilim_bedeli').textContent = formatTL(katilimBedeli) + ' TL (' + katilimPercent + '%)';
+      document.getElementById('calc_toplam_odeme').textContent = formatTL(toplamOdeme) + ' TL';
+
+      const scheduleList = document.getElementById('calcScheduleList');
+      scheduleList.innerHTML = '';
+
+      const maxRows = Math.min(vade, 12);
+      for (let i = 1; i <= maxRows; i++) {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${i}. Ay</span><span>${formatTL(aylikTaksit)} TL</span>`;
+        scheduleList.appendChild(li);
+      }
+
+      if (vade > maxRows) {
+        const more = document.createElement('li');
+        more.innerHTML = `<span>...</span><span>Toplam ${vade} ay</span>`;
+        scheduleList.appendChild(more);
+      }
+
+      document.getElementById('calcResult').style.display = 'block';
+      return false;
+    }
+  </script>
+</body>
+</html>
